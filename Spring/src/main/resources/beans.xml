@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="alien" class="com.telusko.Alien">
+        <property name="com" ref="com1" />
+
+
+    </bean>
+
+    <bean id="com1" class="com.telusko.DeskTop" primary="true">
+
+    </bean>
+    <bean id="com2" class="com.telusko.Laptop">
+
+    </bean>
+</beans>
