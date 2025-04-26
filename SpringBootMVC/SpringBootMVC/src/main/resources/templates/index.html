@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Telusko Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f0fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 80%;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Telusko Calculator</h1>
+    <form action="add" method="get">
+        <label for="num1">Number 1:</label><br>
+        <input type="text" id="num1" name="num1"><br>
+
+        <label for="num2">Number 2:</label><br>
+        <input type="num2" id="num2" name="num2"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
