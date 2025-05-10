@@ -37,22 +37,23 @@ public class SecurityConfig {
 
 
 
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        //disable csrf
-        http.csrf(customizer -> customizer.disable());
+        http.csrf(csrf -> csrf.disable());
 
-        //enable username and password
-        http.authorizeHttpRequests(request -> request.anyRequest().authenticated());
+        http.authorizeHttpRequests(auth -> auth
+                .requestMatchers("/register").permitAll()
+                .anyRequest().authenticated()
+        );
 
-        //provide form-login
         http.httpBasic(Customizer.withDefaults());
 
-        //by default it is stateful, so change it to stateless
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return http.build();
     }
+
 
     //static user values
     /*@Bean
