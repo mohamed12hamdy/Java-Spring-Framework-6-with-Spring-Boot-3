@@ -31,7 +31,8 @@ public class SecurityConfig {
 
         provider.setUserDetailsService(userDetailsService);
         provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
-        
+        //to hash the entered password by user when login to compare hash with saved hash in DB
+        //to allow user to enter the system or not
         return provider;
     }
 
@@ -47,7 +48,7 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
         );
 
-        http.httpBasic(Customizer.withDefaults());
+        http.httpBasic(Customizer.withDefaults());   ///this is for basic Authentication we can replace it with loginform
 
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
